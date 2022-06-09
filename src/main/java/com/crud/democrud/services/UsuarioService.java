@@ -12,10 +12,13 @@ import java.util.Optional;
 public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
-    
+
+
     public ArrayList<UsuarioModel> obtenerUsuarios(){
         return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
     }
+
+
 
     public UsuarioModel guardarUsuario(UsuarioModel usuario){
         return usuarioRepository.save(usuario);
