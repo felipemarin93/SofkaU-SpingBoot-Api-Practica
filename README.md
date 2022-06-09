@@ -8,4 +8,12 @@ se consume desde Postman
 Use el OnetoMany desde la tabla usuario hacia la tabla o entidad Rol Usuario .debido a que un usuario tiene varios roles.
 
 
-https://raw.githubusercontent.com/felipemarin93/SofkaU-SpingBoot-Api-Practica/main/assets/Doc1.docx
+https://raw.githubusercontent.com/felipemarin93/SofkaU-SpingBoot-Api-Practica/main/assets/CreacionRol.png
+
+
+https://raw.githubusercontent.com/felipemarin93/SofkaU-SpingBoot-Api-Practica/main/assets/ObtenerRoles.png
+
+https://raw.githubusercontent.com/felipemarin93/SofkaU-SpingBoot-Api-Practica/main/assets/TestUnitario.png
+
+
+Cualquier duda estoy atento a comentarios.
