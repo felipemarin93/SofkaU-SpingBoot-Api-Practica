@@ -1,31 +1,36 @@
 package com.crud.democrud.models;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-@Data
+
 @Entity
-@Table(name = "roles")
+@Table(name = "rol")
 public class RolModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long idRol;
+    @Getter
+    @Setter
+    private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "rol_usuario_id", nullable = false)
-    @JsonBackReference
-    private UsuarioModel idUsuario;
+    @Getter
+    @Setter
+    private String rolName;
+    @ManyToOne()
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    @Getter
+    @Setter
+    private UsuarioModel idusuario;
 
-    private String rol;
-
-
-    public RolModel(Long idRol, String rol) {
-        this.idRol = idRol;
-        this.rol = rol;
+    public RolModel(Long id, String rolName, UsuarioModel idUsuario) {
+        this.id = id;
+        this.rolName = rolName;
+        this.idusuario = idUsuario;
     }
 
     public RolModel() {

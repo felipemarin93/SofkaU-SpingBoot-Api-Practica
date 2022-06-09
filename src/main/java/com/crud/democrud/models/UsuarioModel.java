@@ -2,15 +2,13 @@ package com.crud.democrud.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
+import org.w3c.dom.stylesheets.LinkStyle;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
-
 import java.util.List;
 
 
-@Data
 @Entity
 @Table(name = "usuario")
 public class UsuarioModel {
@@ -23,12 +21,36 @@ public class UsuarioModel {
     private String email;
     private Integer prioridad;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "idUsuario")
-    @JsonManagedReference
-    private List<RolModel> rol = new ArrayList<>();
+    @OneToMany(mappedBy = "idusuario")
+    private List<RolModel> rolModelList;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Integer getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(Integer prioridad) {
+        this.prioridad = prioridad;
+    }
 
     public UsuarioModel(String nombre, String email, Integer prioridad) {
         this.nombre = nombre;

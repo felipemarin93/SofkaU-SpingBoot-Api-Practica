@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
+
 
 @Service
 public class RolService {
@@ -19,16 +19,9 @@ public class RolService {
         return (ArrayList<RolModel>) rolRepository.findAll();
     }
 
-    public RolModel guardarRolUsuario(RolModel usuarioRol){
-
-        return rolRepository.save(usuarioRol);
+    public RolModel guardarRolUsuario(RolModel rol){
+        return rolRepository.save(rol);
     }
-
-    public Optional<RolModel> obtenerRolPorId(Long id){
-
-        return rolRepository.findById(id);
-    }
-
 
 
     public boolean eliminarRolUsuario(Long id) {
